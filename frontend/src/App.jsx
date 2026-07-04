@@ -3,7 +3,7 @@ function TranscriptInput(){
   const [transcript, setTranscript]=useState('');
   const [result, setResult]=useState('');
   async function backendCall(){
-    const response=await fetch('http://127.0.0.1:8000/generate_notes_endpoint',{
+    const response=await fetch('https://lecture-to-notes-7yw7.onrender.com/generate_notes_endpoint',{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
