@@ -1,8 +1,11 @@
 import json
-
+import os
 from groq import Groq
 
-API_KEY = "groq_api_key"
+API_KEY = os.environ.get("GROQ_API_KEY", "groq_api_key")
+if API_KEY == "groq_api_key":
+    raise ValueError("Set your GROQ_API_KEY environment variable")
+
 client = Groq(api_key=API_KEY)
 MODEL_NAME = "llama-3.3-70b-versatile"
 
